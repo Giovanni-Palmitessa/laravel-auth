@@ -45,7 +45,7 @@
       </div>
 
     <a href="{{ route('login') }}">
-        {{ __('Already registered?') }}
+        'Already registered?'
     </a>
 
     <button type="submit" class="btn btn-primary">Register</button>
