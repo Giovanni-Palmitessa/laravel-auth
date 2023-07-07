@@ -54,7 +54,22 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validare i dati del form
+        $request->validate($this->validations, $this->validations_messages);
+
+        $data = $request->all();
+
+
+        // salvare i dati nel db se validi
+        $newPortfolio = new Portfolio();
+        $newPortfolio->name = $data['name'];
+        $newPortfolio->client_name = $data['client_name'];
+        $newPortfolio->url_image = $data['url_image'];
+        $newPortfolio->pickup_date = $data['pickup_date'];
+        $newPortfolio->deploy_date = $data['deploy_date'];
+        $newPortfolio->description = $data['description'];
+
+        $newPortfolio->save();
     }
 
     /**
