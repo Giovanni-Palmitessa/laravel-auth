@@ -7,7 +7,7 @@
         @csrf
 
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Nome</label>
             <input
                 type="text"
                 class="form-control @error('name') is-invalid @enderror"
@@ -23,7 +23,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="client_name" class="form-label">Client Name</label>
+            <label for="client_name" class="form-label">nome Cliente</label>
             <input
                 type="text"
                 class="form-control @error('client_name') is-invalid @enderror"
@@ -39,7 +39,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="url_image" class="form-label">Image</label>
+            <label for="url_image" class="form-label">Immagine</label>
             <input
                 type="text"
                 class="form-control @error('url_image') is-invalid @enderror"
@@ -55,7 +55,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="pickup_date" class="form-label">Pickup Date</label>
+            <label for="pickup_date" class="form-label">Data inizio progetto</label>
             <input
                 type="date"
                 class="form-control @error('pickup_date') is-invalid @enderror"
@@ -71,7 +71,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="deploy_date" class="form-label">Deploy Date</label>
+            <label for="deploy_date" class="form-label">Data consegna progetto</label>
             <input
                 type="date"
                 class="form-control @error('deploy_date') is-invalid @enderror"
@@ -87,19 +87,19 @@
         </div>
 
         <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
+            <label for="description" class="form-label">Descrizione</label>
             <textarea
-                class="form-control @error('content') is-invalid @enderror"
-                id="content"
+                class="form-control @error('description') is-invalid @enderror"
+                id="description"
                 rows="3"
-                name="content">{{ old('content') }}</textarea>
-            @error('content')
+                name="description">{{ old('description') }}</textarea>
+            @error('description')
                 <div class="invalid-feedback">
                     {{ $message }} 
                 </div>
             @enderror
         </div>
 
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary">Salva</button>
     </form>
 @endsection
