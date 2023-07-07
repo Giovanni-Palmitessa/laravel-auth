@@ -1,10 +1,11 @@
 @extends('admin.layouts.base')
 
 @section('contents')
-    <h1>Add new Post</h1>
+    <h1>Edit Post</h1>
     
-    <form method="POST" action="{{ route('admin.portfolios.store') }}">
+    <form method="POST" action="{{ route('admin.portfolios.update', ['portfolio' => $portfolio]) }}">
         @csrf
+        @method('put')
 
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
@@ -13,7 +14,7 @@
                 class="form-control @error('name') is-invalid @enderror"
                 id="name"
                 name="name"
-                value="{{ old('name') }}"
+                value="{{ old('name', $portfolio->name) }}"
             >
             @error('name')
                 <div class="invalid-feedback">
@@ -29,7 +30,7 @@
                 class="form-control @error('client_name') is-invalid @enderror"
                 id="client_name"
                 name="client_name"
-                value="{{ old('client_name') }}"
+                value="{{ old('client_name', $portfolio->client_name) }}"
             >
             @error('client_name')
                 <div class="invalid-feedback">
@@ -45,7 +46,7 @@
                 class="form-control @error('url_image') is-invalid @enderror"
                 id="url_image"
                 name="url_image"
-                value="{{ old('url_image') }}"
+                value="{{ old('url_image', $portfolio->url_image) }}"
             >
             @error('url_image')
                 <div class="invalid-feedback">
@@ -61,7 +62,7 @@
                 class="form-control @error('pickup_date') is-invalid @enderror"
                 id="pickup_date"
                 name="pickup_date"
-                value="{{ old('pickup_date') }}"
+                value="{{ old('pickup_date', $portfolio->pickup_date) }}"
             >
             @error('pickup_date')
                 <div class="invalid-feedback">
@@ -77,7 +78,7 @@
                 class="form-control @error('deploy_date') is-invalid @enderror"
                 id="deploy_date"
                 name="deploy_date"
-                value="{{ old('deploy_date') }}"
+                value="{{ old('deploy_date', $portfolio->deploy_date) }}"
             >
             @error('deploy_date')
                 <div class="invalid-feedback">
@@ -92,7 +93,7 @@
                 class="form-control @error('description') is-invalid @enderror"
                 id="description"
                 rows="3"
-                name="description">{{ old('description') }}</textarea>
+                name="description">{{ old('description', $portfolio->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback">
                     {{ $message }} 

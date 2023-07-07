@@ -107,7 +107,25 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        // validare i dati del form
+        $request->validate($this->validations, $this->validations_messages);
+
+        $data = $request->all();
+
+
+        // salvare i dati nel db se validi
+        $portfolio->name = $data['name'];
+        $portfolio->client_name = $data['client_name'];
+        $portfolio->url_image = $data['url_image'];
+        $portfolio->pickup_date = $data['pickup_date'];
+        $portfolio->deploy_date = $data['deploy_date'];
+        $portfolio->description = $data['description'];
+
+        $portfolio->update();
+
+        // reindirizzare su una rotta di tipo get
+
+        return to_route('admin.portfolios.show', ['portfolio' => $portfolio]);
     }
 
     /**
@@ -118,6 +136,8 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $portfolio->delete();
+
+        return to_route('admin.portfolios.index')->with('delete_success', $portfolio);
     }
 }
