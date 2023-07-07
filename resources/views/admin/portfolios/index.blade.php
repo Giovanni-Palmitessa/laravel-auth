@@ -32,16 +32,7 @@
                     <td>
                         <a class="btn btn-primary" href="{{ route('admin.portfolios.show', ['portfolio' => $portfolio->id]) }}">View</a>
                         <a class="btn btn-warning" href="{{ route('admin.portfolios.edit', ['portfolio' => $portfolio->id]) }}">Edit</a>
-                        {{-- <form
-                            action="{{ route('admin.portfolios.destroy', ['portfolio' => $portfolio->id]) }}"
-                            method="post"
-                            class="d-inline-block"
-                        >
-                            @csrf
-                            @method('delete')
-                            <button class="btn btn-danger">Delete</button>
-                        </form> --}}
-
+                        
                         <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $portfolio->id }}">
                             Delete
                         </button>
