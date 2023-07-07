@@ -23,7 +23,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="client_name" class="form-label">nome Cliente</label>
+            <label for="client_name" class="form-label">Nome Cliente</label>
             <input
                 type="text"
                 class="form-control @error('client_name') is-invalid @enderror"
