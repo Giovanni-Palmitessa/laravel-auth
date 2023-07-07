@@ -43,7 +43,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.portfolios.create');
     }
 
     /**
