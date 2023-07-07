@@ -4,6 +4,13 @@
 
     <h1>Portfolios</h1>
 
+    @if (session('delete_success'))
+        @php $portfolio = session('delete_success') @endphp
+        <div class="alert alert-danger">
+            Il portfolio "{{ $portfolio->name }}" è stato eliminato per sempre :(
+        </div>
+    @endif
+
     <table class="table table-striped">
         <thead>
             <tr>
