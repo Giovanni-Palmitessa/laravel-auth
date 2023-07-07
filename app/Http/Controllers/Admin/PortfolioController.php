@@ -70,6 +70,10 @@ class PortfolioController extends Controller
         $newPortfolio->description = $data['description'];
 
         $newPortfolio->save();
+
+        // reindirizzare su una rotta di tipo get
+
+        return to_route('admin.portfolios.show', ['portfolio' => $newPortfolio]);
     }
 
     /**
