@@ -1,1 +1,4 @@
-@include('admin.includes.nav')
+<header>
+    @include('admin.includes.nav')
+</header>
+
