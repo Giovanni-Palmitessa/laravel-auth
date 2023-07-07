@@ -23,15 +23,15 @@
         </div>
 
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
+            <label for="client_name" class="form-label">Client Name</label>
             <input
                 type="text"
-                class="form-control @error('title') is-invalid @enderror"
-                id="title"
-                name="title"
-                value="{{ old('title') }}"
+                class="form-control @error('client_name') is-invalid @enderror"
+                id="client_name"
+                name="client_name"
+                value="{{ old('client_name') }}"
             >
-            @error('title')
+            @error('client_name')
                 <div class="invalid-feedback">
                     {{ $message }} 
                 </div>
