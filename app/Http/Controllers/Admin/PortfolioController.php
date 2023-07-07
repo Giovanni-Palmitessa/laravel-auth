@@ -8,6 +8,22 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
+    private $validations = [
+        'name' => 'required|string|max:100|min:5',
+        'client_name' => 'required|string|max:100|min:5',
+        'url_image' => 'required|url|max:400',
+        'pickup_date' => 'required|date',
+        'deploy_date' => 'required|date',
+        'description' => 'required|string',
+    ];
+
+    private $validations_messages = [
+        'required' => 'Il campo :attribute è richiesto',
+        'min' => 'Il campo :attribute deve avere almeno :min caratteri',
+        'max' => 'Il campo :attribute deve avere massimo :max caratteri',
+        'url' => 'Il campo :attribute deve essere un URL valido',
+        'date' => 'Il campo :attribute deve essere una data in formato valido',
+    ];
     /**
      * Display a listing of the resource.
      *
