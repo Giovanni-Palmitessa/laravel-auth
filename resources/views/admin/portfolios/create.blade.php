@@ -55,6 +55,22 @@
         </div>
 
         <div class="mb-3">
+            <label for="pickup_date" class="form-label">Pickup Date</label>
+            <input
+                type="date"
+                class="form-control @error('pickup_date') is-invalid @enderror"
+                id="pickup_date"
+                name="pickup_date"
+                value="{{ old('pickup_date') }}"
+            >
+            @error('pickup_date')
+                <div class="invalid-feedback">
+                    {{ $message }} 
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
             <label for="content" class="form-label">Content</label>
             <textarea
                 class="form-control @error('content') is-invalid @enderror"
