@@ -36,7 +36,7 @@
                   {{ $user->name }}
               </a>
               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}">Edit profile</a></li>
+                  <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit profile</a></li>
 
                   <li>
                       <form action="{{ route('logout') }}" method="post" class="ms-3">
